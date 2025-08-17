@@ -12,7 +12,7 @@ const Navbar = ({ isConnected = false, onConnect }: NavbarProps) => {
   const location = useLocation();
 
   return (
-    <header className="border-b border-border bg-background shadow-sm sticky top-0 z-50">
+    <header className="border-b border-border bg-card shadow-sm sticky top-0 z-50">
       <div className="px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-6">
@@ -27,40 +27,7 @@ const Navbar = ({ isConnected = false, onConnect }: NavbarProps) => {
             )}
           </div>
           
-          <nav className="flex items-center space-x-4">
-            <Link to="/">
-              <Button 
-                variant={location.pathname === "/" ? "orange" : "ghost"} 
-                size="sm"
-                className="flex items-center space-x-2"
-              >
-                <Home className="w-4 h-4" />
-                <span>Home</span>
-              </Button>
-            </Link>
-            
-            <Link to="/chat">
-              <Button 
-                variant={location.pathname === "/chat" ? "orange" : "ghost"} 
-                size="sm"
-                className="flex items-center space-x-2"
-              >
-                <Plus className="w-4 h-4" />
-                <span>Create</span>
-              </Button>
-            </Link>
-            
-            <Link to="/drafts">
-              <Button 
-                variant={location.pathname === "/drafts" ? "orange" : "ghost"} 
-                size="sm"
-                className="flex items-center space-x-2"
-              >
-                <FileText className="w-4 h-4" />
-                <span>Drafts</span>
-              </Button>
-            </Link>
-            
+          <nav className="flex items-center">
             <Link to="/settings">
               <Button variant="ghost" size="icon">
                 <Settings className="w-5 h-5" />
